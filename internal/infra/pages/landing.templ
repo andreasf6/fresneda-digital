@@ -1,0 +1,223 @@
+package pages
+
+templ LandingPage() {
+	<div class="landing-page">
+		<section id="hero" class="hero-section">
+			<div class="hero-container">
+				<!-- Left side: Text content (1/3 on desktop, full width on mobile) -->
+				// <div class="hero-content">
+				// 	<h1 class="hero-title">
+				// 		Welcome to
+				// 		<span class="hero-highlight">Fresneda Digital</span>
+				// 	</h1>
+				// 	<p class="hero-description">
+				// 		We craft digital experiences that transform your vision into reality. 
+				// 		Our team combines creativity with technical excellence to deliver 
+				// 		exceptional results.
+				// 	</p>
+				// 	<p class="hero-contact">
+				// 		For enquiries, reach out to
+				// 		<a href="mailto:work@fresneda.digital" class="contact-link">work@fresneda.digital</a>
+				// 	</p>
+				// </div>
+				<!-- Right side: Images (2/3 on desktop, full width on mobile) -->
+				<div class="hero-image">
+					<div class="image-container">
+						<!-- Frame2 image - clickable -->
+						<img
+							id="frame-image"
+							src="/static/images/Frame 2.png"
+							alt="Frame"
+							class="frame-image"
+						/>
+						<!-- Laptop image -->
+						<img
+							src="/static/images/laptop.png"
+							alt="Laptop"
+							class="laptop-image"
+						/>
+						<img
+							src="/static/images/brush.png"
+							alt="Brush"
+							class="brush-image"
+						/>
+
+						<div id="terminal-overlay" class="terminal-overlay hidden">
+							<div class="terminal-window">
+								<div class="terminal-header">
+									<div class="terminal-buttons">
+										<div id="terminal-btn-close" class="terminal-btn close"></div>
+										<div class="terminal-btn minimize"></div>
+										<div class="terminal-btn maximize"></div>
+									</div>
+								</div>
+								<div class="terminal-body">
+									<div id="terminal-text" class="terminal-text"></div>
+									<div class="terminal-input-line">
+										<span class="terminal-prompt">></span>
+										<input 
+											id="terminal-input" 
+											type="text" 
+											class="terminal-input"
+											placeholder="Type a command..."
+											autocomplete="off"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		@ExperienceSection()
+		<!-- Terminal Overlay -->
+	</div>
+	<script>
+        const frameImage = document.getElementById('frame-image');
+		const laptopImage = document.querySelector('.laptop-image');
+		const brushImage = document.querySelector('.brush-image');
+
+		const terminalBtnClose = document.getElementById('terminal-btn-close');
+        const terminalOverlay = document.getElementById('terminal-overlay');
+        const terminalText = document.getElementById('terminal-text');
+        const terminalInput = document.getElementById('terminal-input');
+        const clickSound = new Audio('/static/images/keyclick.mp3');
+        
+        let terminalOpen = false;
+		let laptopState = 0; // 0: 'closed', 1: 'code', 2: 'art'
+        
+        frameImage.addEventListener('click', function() {
+            // Play the click sound
+            clickSound.currentTime = 0;
+            clickSound.play().catch(err => console.log('Audio play error:', err));
+			            
+            // Change to gif
+            frameImage.src = '/static/images/Frame 2-2.gif';
+			
+            // Change back to png after
+            setTimeout(function() {
+                frameImage.src = '/static/images/Frame 2.png';
+
+				laptopState = laptopState === 1 ? 0 : 1 // Toggle between 'closed' and 'code'
+				// Toggle laptop image
+				if (laptopState === 1) {
+					laptopImage.src = '/static/images/journease.png';
+					laptopImage.style.cursor = 'pointer';
+					laptopImage.addEventListener('click', function() {
+						window.open('https://devpost.com/software/journease', '_blank');
+					});
+				} else if (laptopState === 0) {
+					laptopImage.src = '/static/images/laptop.png';
+				}
+				
+				// Toggle terminal
+				// terminalOpen = !terminalOpen;
+				
+				// if (terminalOpen) {
+				// 	terminalOverlay.classList.remove('hidden');
+				// 	// Trigger the opening animation
+				// 	setTimeout(() => {
+				// 		terminalOverlay.classList.add('active');
+				// 		typeTerminalText();
+				// 		terminalInput.focus();
+				// 	}, 200);
+				// } else {
+				// 	terminalOverlay.classList.remove('active');
+				// 	setTimeout(() => {
+				// 		terminalOverlay.classList.add('hidden');
+				// 		terminalText.innerHTML = '';
+				// 	}, 300);
+				// }
+				laptop
+            }, 600);
+        });
+
+		brushImage.addEventListener('click', function() {
+			brushImage.src = '/static/images/brush.gif';
+			laptopState = laptopState === 2 ? 0 : 2 // Toggle between 'closed' and 'art'
+
+			setTimeout(() => {
+				brushImage.src = '/static/images/brush.png';
+				if (laptopState === 2) {
+					laptopImage.src = '/static/images/art.gif';
+				} else if (laptopState === 0) {
+					laptopImage.src = '/static/images/laptop.png';
+				}
+
+			}, 1500);
+		});
+
+		terminalBtnClose.addEventListener('click', function() {
+			terminalOpen = false;
+			terminalOverlay.classList.remove('active');
+			setTimeout(() => {
+				terminalOverlay.classList.add('hidden');
+				terminalText.innerHTML = '';
+			}, 300);
+		});
+
+		// Handle terminal input
+		terminalInput.addEventListener('keypress', function(e) {
+			if (e.key === 'Enter') {
+				const command = terminalInput.value.trim();
+				if (command) {
+					// Display the command that was typed
+					terminalText.innerHTML += '> ' + command + '\n';
+					
+					// Process the command
+					const output = processCommand(command);
+					
+					// Display the output
+					terminalText.innerHTML += output + '\n';
+					
+					// Scroll to bottom
+					const terminalBody = document.querySelector('.terminal-body');
+					terminalBody.scrollTop = terminalBody.scrollHeight;
+				}
+				terminalInput.value = '';
+			}
+		});
+
+		function processCommand(command) {
+			const cmd = command.toLowerCase().trim();
+			
+			switch(cmd) {
+				case 'help':
+					return 'Available commands:\n  help -- Show this help message\n  ls   -- Show files\n  cat <file> -- Display file contents\n  date -- Display current date time';
+				case 'ls':
+					return 'projects/\n  about.txt\n  portfolio.html\n  contact.html';
+				case 'date':
+					return new Date().toString();
+				default:
+					if (cmd.startsWith('cat ')) {
+						const file = cmd.substring(4);
+						if (file === 'about.txt') {
+							return 'Fresneda Digital\nCrafting exceptional digital experiences since 2024.\nSpecializing in web design and development.';
+						}
+						return 'cat: ' + file + ': No such file or directory';
+					}
+					return 'Command not found: ' + cmd + '\nType "help" for available commands';
+			}
+		}
+        
+        function typeTerminalText() {
+            const text = "> Welcome to the terminal\n> Type 'help' for available commands\n";
+            const words = text.split(' ');
+            let wordIndex = 0;
+            terminalText.innerHTML = '';
+            
+            function typeWord() {
+                if (wordIndex < words.length) {
+                    terminalText.innerHTML += words[wordIndex] + ' ';
+                    wordIndex++;
+                    setTimeout(typeWord, 200);
+                }
+            }
+            
+            typeWord();
+        }
+        
+        frameImage.style.cursor = 'pointer';
+    </script>
+}

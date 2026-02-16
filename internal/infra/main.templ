@@ -1,0 +1,48 @@
+package infra
+
+// import "github.com/andreasf6/fresneda-digital/internal/infra/components"
+import "github.com/andreasf6/fresneda-digital/internal/infra/pages"
+
+templ withHeader() {
+	<head>
+		<link rel="stylesheet" href="/static/index.css"/>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Oswald:wght@200..700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+		<link rel="preconnect" href="https://fonts.googleapis.com"/>
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+	</head>
+	<body class="instrument-sans-regular">
+		<div class="header">
+			<div class="logo inria-serif-regular">
+				Andrea @
+				<div class="instrument-sans-bold"> Fresneda Digital.</div>
+			</div>
+		</div>
+		{ children... }
+	</body>
+}
+
+templ Main() {
+	@withHeader() {
+		@pages.LandingPage()
+	}
+}
+
+templ PageTwo() {
+	@withHeader() {
+		<h1>Hello page two</h1>
+	}
+}
