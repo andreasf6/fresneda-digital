@@ -1,7 +1,7 @@
 package components
 
 templ AwardCard(title string, category string, link string) {
-	<div class="main-section-award">
+	<div class={"main-section-award", templ.KV("inactive", link == "")}>
 		<p class="main-section-award-title inria-sans-bold">{ title }</p>
 		<p class="main-section-award-description">{ category }</p>
 		if link != "" {
