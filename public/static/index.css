@@ -1,0 +1,419 @@
+/* ========================================
+   FONT DEFINITIONS
+   ======================================== */
+
+.instrument-sans-medium {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "width" 100;
+}
+
+.instrument-sans-bold {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "width" 100;
+}
+
+.instrument-sans-regular {
+  font-family: "Instrument Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "width" 100;
+}
+
+.inria-sans-light {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inria-sans-regular {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inria-sans-bold {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inria-sans-light-italic {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.inria-sans-regular-italic {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inria-sans-bold-italic {
+  font-family: "Inria Sans", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.inria-serif-light {
+  font-family: "Inria Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.inria-serif-regular {
+  font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inria-serif-bold {
+  font-family: "Inria Serif", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.inria-serif-light-italic {
+  font-family: "Inria Serif", serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.inria-serif-regular-italic {
+  font-family: "Inria Serif", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.inria-serif-bold-italic {
+  font-family: "Inria Serif", serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+
+body {
+  color: black;
+  /* background-color: oklch(0.99 0.02 100.59); */
+  /* padding: 3rem 15rem; */
+  max-width: 800px;
+  margin: auto;
+  /* padding-top: 5rem; */
+  padding: 4rem 2rem;
+  --grid-size: 30px;
+  --grid-strength: 1px;
+  --grid-dash: 10px;
+  --grid-gap: 5px;
+  --grid-color: oklch(0.94 0.01 100.59);
+  --paper-color: oklch(0.97 0.01 100.59);
+  background-attachment:fixed;
+  background-color: var(--paper-color);
+  background-size: var(--grid-dash) var(--grid-dash), var(--grid-size) var(--grid-size);
+  background-image:
+    linear-gradient(to bottom, transparent var(--grid-gap), var(--paper-color) var(--grid-gap)),
+    linear-gradient(to right, var(--grid-color) var(--grid-strength), transparent var(--grid-strength)),
+    linear-gradient(to right, transparent var(--grid-gap), var(--paper-color) var(--grid-gap)),
+    linear-gradient(to bottom, var(--grid-color) var(--grid-strength), transparent var(--grid-strength));
+}
+
+.circle {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-left: 0.5rem;
+}
+
+
+h1 {
+  /* font-size: 4rem; */
+  margin-bottom: 20px;
+  font-size: clamp(2rem, 5vw + 1rem, 4rem);
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw + 0.75rem, 2.75rem);
+  line-height: 1.2;
+}
+
+/* ========================================
+   MAIN SECTION LAYOUT
+   ======================================== */
+
+.description-box {
+  background: oklch(0.94 0.02 100.59);
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  width: fit-content;
+  font-size: 1rem;
+  margin-bottom: 3rem;
+}
+
+.main-section-entry {
+  display: inline-flex;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  flex-direction: row;
+}
+
+.main-section-entry h2 {
+  padding-right: 4rem;
+  margin: 0;
+  width: 30%;
+  min-width: 30%;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
+/* ========================================
+   WORK & EDUCATION SECTION
+   ======================================== */
+
+.bullet {
+  width: 40px;
+  height: 40px;
+  background-color: oklch(0.877 0.0231 78.2);
+  border-radius: 50%;
+  flex-shrink: 0;
+  background-image: url("/static/images/briefcase-2.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.education {
+  background-image: url("/static/images/education.png");
+}
+
+.main-section-work {
+  display: flex;
+  gap: 1rem;
+}
+
+.bullet-part {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+div.vertical-line {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.15);
+  height: 100%;
+  float: left;
+}
+
+.main-section-work-content-description {
+  padding-bottom: 3rem;
+}
+
+.main-section-work-content a {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+
+/* ========================================
+   AWARDS & CERTIFICATES SECTION
+   ======================================== */
+
+.main-section-awards {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.main-section-awards .active {
+  display: flex;
+  gap: 3rem;
+}
+
+.main-section-awards .inactive {
+  display: flex;
+  gap: 3rem;
+}
+
+.main-section-award {
+  width: 100%;
+  background-color: oklch(0.877 0.0231 78.2);
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+.main-section-award a {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1rem;
+  color: white;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+.active .main-section-award-description {
+  margin-bottom: 4rem;
+}
+
+.inactive .main-section-award {
+  width: fit-content;
+  background-color: oklch(0.897 0.0031 78.2);
+  color: oklch(0.407 0.0031 78.2);
+}
+
+/* ========================================
+   VOLUNTEER SECTION
+   ======================================== */
+
+.main-section-volunteer-entry {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid lightgray;
+  padding-bottom: 2rem;
+  flex-direction: row-reverse;
+  gap: 3rem;
+}
+
+.main-section-volunteer-entry-description {
+  max-width: 60%;
+}
+
+.main-section-volunteer-entry-right {
+  text-align: left;
+}
+
+/* ========================================
+   GENERAL COMPONENTS
+   ======================================== */
+
+.btn {
+  background-color: black;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all .2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.link-btn {
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 5rem;
+}
+
+.description-box-cont {
+  display: inline-flex; 
+  gap: 2rem;
+  flex-direction: row;
+}
+
+.footer {
+  border-top: 1px solid oklch(0 0 0 / 10%);
+  padding-top: 1rem;
+  color: oklch(0 0 0 / 30%);
+}
+
+.footer a {
+  color: oklch(0 0 0 / 40%);
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.footer-floating {
+  position: fixed;
+  bottom: 0;
+  right: 80;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+.footer-floating .email {
+  color: black;
+}
+
+/* ========================================
+   MEDIA QUERIES
+   ======================================== */
+
+@media (max-width: 768px) {
+  .main-section-entry {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .main-section-entry h2 {
+    text-align: left;
+  }
+
+  .main-section-awards .active {
+    flex-direction: column;
+  }
+
+  .main-section-award {
+    min-width: 100%;
+    padding: 0;
+  }
+
+  .main-section-award p {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .main-section-award a {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .active .main-section-award-description {
+    margin-bottom: 5rem;
+  }
+
+  .footer-floating {
+    position: fixed;
+    bottom: 189px;
+    right: 8;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 1rem;
+  }
+
+  .footer-floating .email {
+    color: #ababab;
+    transform: rotate(90deg);
+    position: absolute;
+    left: 17px;
+    bottom: -22;
+    right: 80;
+  }
+
+  .description-box-cont {
+    flex-direction: column;
+  }
+}
