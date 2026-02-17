@@ -29,11 +29,6 @@ func main() {
 		log.Fatalf("failed to create page")
 	}
 
-	err = createPage(ctx, path.Join(rootPath, "pagetwo.html"), infra.PageTwo())
-	if err != nil {
-		log.Fatalf("failed to create page")
-	}
-
 	err = os.CopyFS("./public/static", os.DirFS("./static"))
 	if err != nil {
 		log.Fatalf("ifailed to copy static files")

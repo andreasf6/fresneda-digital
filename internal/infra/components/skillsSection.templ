@@ -1,0 +1,34 @@
+package components
+
+import "strings"
+
+var skills = []string{
+	"Golang",
+	"Java",
+	"Kotlin",
+	"Python",
+	"JavaScript",
+	"Typescript",
+	"React",
+	"NextJS",
+	"ReactNative",
+	"HTML & CSS",
+	"SQL",
+	"MATLAB",
+	"Unix",
+	"Git",
+	"Cloud Computing",
+	"UI/UX design",
+	"Figma",
+	"Photoshop",
+	"Final Cut Pro",
+}
+
+templ SkillsSection() {
+	<div class="main-section-entry">
+		<h2>Skills</h2>
+		<div style="line-height: 1.8rem;">
+			{ strings.Join(skills, " · ") }
+		</div>
+	</div>
+}

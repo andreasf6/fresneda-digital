@@ -1,0 +1,11 @@
+package components
+
+templ AwardCard(title string, category string, link string) {
+	<div class="main-section-award">
+		<p class="main-section-award-title inria-sans-bold">{ title }</p>
+		<p class="main-section-award-description">{ category }</p>
+		if link != "" {
+			<a class="btn" href={ templ.SafeURL(link) } target="_blank">View post →</a>
+		}
+	</div>
+}
