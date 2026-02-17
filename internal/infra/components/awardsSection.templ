@@ -1,0 +1,28 @@
+package components
+
+templ AwardsSection() {
+	<div class="main-section-entry">
+		<h2>Certificates & Awards</h2>
+		<div class="main-section-awards">
+			<div class="active">
+				@AwardCard(
+					"🏆DIF Hackathon, 2024",
+					"Hospitality & Travel",
+					"https://devpost.com/software/journease",
+				)
+				@AwardCard(
+					"🏆Encode Digital Identity Hackathon, 2023",
+					"Finance & Identity Intersection (sponsored by J.P.Morgan)",
+					"https://www.blog.encode.club/digital-identity-hackathon-sponsored-by-onyx-by-j-p-morgan-prizewinners-and-summary-5edbfc178f0d",
+				)
+			</div>
+			<div class="inactive">
+				@AwardCard(
+					"☁️ Google Cloud Platform, 2021",
+					"Associate Cloud Engineer",
+					"",
+				)
+			</div>
+		</div>
+	</div>
+}

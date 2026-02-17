@@ -1,0 +1,17 @@
+package components
+
+templ EducationEntry(degree string, school string, link string, result string) {
+	<div class="main-section-work">
+		<div class="bullet-part">
+			<div class="bullet education"></div>
+			<div class="vertical-line"></div>
+		</div>
+		<div class="main-section-work-content">
+			<a href={ templ.SafeURL(link) } target="_blank">
+				<span class="inria-sans-bold">{ degree }</span> · 
+				<span style="text-decoration: underline;" class="inria-sans-regular">{ school }</span>
+			</a>
+			<p class="main-section-work-content-description inria-serif-regular">{ result }</p>
+		</div>
+	</div>
+}

@@ -1,0 +1,21 @@
+package components
+
+templ WorkEntry(role string, company string, link string, years string, description string) {
+	<div class="main-section-work">
+		<div class="bullet-part">
+			<div class="bullet"></div>
+			<div class="vertical-line"></div>
+		</div>
+		<div class="main-section-work-content">
+			<a href={ templ.SafeURL(link) } target="_blank">
+                <span class="inria-sans-bold">{ role }</span> · 
+				<span style="text-decoration: underline;" class="inria-sans-regular">{ company }</span>
+            </a>
+			
+            if years != "" {
+                <p>{ years }</p> 
+            }
+			<p class="main-section-work-content-description inria-serif-regular">{ description }</p>
+		</div>
+	</div>
+}

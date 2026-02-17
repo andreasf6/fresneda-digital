@@ -1,0 +1,14 @@
+package components
+
+templ VolunteerEntry(description string, role string, organization string, years string) {
+	<div class="main-section-volunteer-entry">
+		<div class="main-section-volunteer-entry-description inria-serif-regular">
+			{ description }
+		</div>
+		<div class="main-section-volunteer-entry-right">
+			<div class="main-section-volunteer-entry-role inria-sans-bold">{ role },</div>
+			<div class="main-section-volunteer-entry-location inria-sans-regular">{ organization }</div>
+			<div class="main-section-volunteer-entry-date inria-sans-light">{ years }</div>
+		</div>
+	</div>
+}

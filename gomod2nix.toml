@@ -1,0 +1,6 @@
+schema = 3
+
+[mod]
+  [mod."github.com/a-h/templ"]
+    version = "v0.3.924"
+    hash = "sha256-ld9xCga0w+xSUtXraqOsdqxNrb2+Ya0Sj/87ZZbYyCw="
