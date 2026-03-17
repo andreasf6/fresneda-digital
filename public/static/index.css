@@ -158,7 +158,7 @@ h2 {
    ======================================== */
 
 .description-box {
-  background: oklch(0.94 0.02 100.59);
+  background: oklch(0.877 0.0231 78.2);
   color: #333;
   padding: 0.75rem 1.5rem;
   font-size: 0.9rem;
@@ -166,7 +166,7 @@ h2 {
   margin-top: 0.5rem;
   width: fit-content;
   font-size: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .main-section-entry {
@@ -329,6 +329,30 @@ div.vertical-line {
   max-width: 30px;
   max-height: 30px;
   border-radius: 5rem;
+}
+
+.connect-cta {
+  display: flex;
+  /* align-items: center; */
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: fit-content;
+  margin-bottom: 1rem;
+}
+
+.connect-cta-text {
+  color: oklch(0 0 0 / 50%);
+  font-size: 1rem;
+}
+
+.connect-btn {
+  font-family: "Inria Sans", sans-serif;
+  font-size: 1rem;
+  padding: 0.6rem 1.25rem;
+  letter-spacing: 0.02em;
+  width: fit-content;
 }
 
 .description-box-cont {
