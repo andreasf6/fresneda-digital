@@ -29,8 +29,10 @@ templ withHeader() {
 		<link rel="shortcut icon" href="/static/favicon/favicon.ico"/>
 		<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png"/>
 		<link rel="manifest" href="/static/favicon/site.webmanifest"/>
+		<script src="/static/theme.js"></script>
 	</head>
 	<body class="inria-sans-regular">
+		<button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">&#9790;</button>
 		{ children... }
 	</body>
 }

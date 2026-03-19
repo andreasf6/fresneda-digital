@@ -23,7 +23,7 @@ templ Header() {
 	<div class="top">
 		<div>
 			<a href="mailto:andrea@fresneda.digital" style="text-decoration: underline; color: oklch(0 0 0 / 10%);">
-				<h1 style="color: black;">Andrea<span class="inria-sans-regular" style="color:oklch(0 0 0 / 20%); font-size: clamp(1rem, 2vw + 1rem, 2rem);">&commat;fresneda.digital</span></h1>
+				<h1 style="color: var(--color-text);">Andrea<span class="inria-sans-regular" style="color:var(--color-text-muted); font-size: clamp(1rem, 2vw + 1rem, 2rem);">&commat;fresneda.digital</span></h1>
 			</a>
 			<h2 class="inria-serif-bold" style="margin-top: 0">Full-stack Software Engineer</h2>
 		</div>
@@ -37,14 +37,4 @@ templ Header() {
 		<a class="btn connect-btn" href="mailto:andrea@fresneda.digital">Let's connect →</a>
 	</div>
 	<br/>
-	<script>
-		document.querySelectorAll('.circle').forEach(circle => {
-			circle.addEventListener('click', function() {
-				const lightness = this.dataset.lightness;
-				const chroma = this.dataset.chroma;
-				const randomHue = Math.floor(Math.random() * 361);
-				this.style.backgroundColor = `oklch(${lightness} ${chroma} ${randomHue})`;
-			});
-		});
-	</script>
 }
