@@ -1,8 +1,13 @@
 package components
 
-templ AwardCard(title string, category string, link string) {
+templ AwardCard(title string, category string, link string, titleIcon string) {
 	<div class={"main-section-award", templ.KV("inactive", link == "")}>
-		<p class="main-section-award-title inria-sans-bold">{ title }</p>
+		<p class="main-section-award-title inria-sans-bold">
+			if titleIcon != "" {
+				<img src={ titleIcon } class="title-icon" alt=""/>
+			}
+			{ title }
+		</p>
 		<p class="main-section-award-description">{ category }</p>
 		if link != "" {
 			<a class="btn" href={ templ.SafeURL(link) } target="_blank">View post →</a>

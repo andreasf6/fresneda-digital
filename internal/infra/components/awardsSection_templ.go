@@ -34,25 +34,28 @@ func AwardsSection() templ.Component {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = AwardCard(
-			"🏆DIF Hackathon, 2024",
+			"DIF Hackathon, 2024",
 			"Hospitality & Travel",
 			"https://devpost.com/software/journease",
+			"/static/images/trophy.svg",
 		).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = AwardCard(
-			"🏆Encode Digital Identity Hackathon, 2023",
+			"Encode Digital Identity Hackathon, 2023",
 			"Finance & Identity Intersection (sponsored by J.P.Morgan)",
 			"https://www.blog.encode.club/digital-identity-hackathon-sponsored-by-onyx-by-j-p-morgan-prizewinners-and-summary-5edbfc178f0d",
+			"/static/images/trophy.svg",
 		).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
 		templ_7745c5c3_Err = AwardCard(
-			"☁️ Google Cloud Platform, 2021",
+			"Google Cloud Platform, 2021",
 			"Associate Cloud Engineer",
 			"",
+			"/static/images/cloud.svg",
 		).Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
