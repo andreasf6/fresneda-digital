@@ -13,8 +13,9 @@
 
   function updateButton(theme) {
     var btn = document.getElementById('theme-toggle');
-    if (!btn) return;
-    btn.textContent = theme === 'dark' ? '\u2600' : '\u263e';
+    var icon = document.getElementById('theme-toggle-icon');
+    if (!btn || !icon) return;
+    icon.src = theme === 'dark' ? '/static/images/light.svg' : '/static/images/dark.svg';
     btn.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
     btn.setAttribute('aria-label', btn.title);
   }
