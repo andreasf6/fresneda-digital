@@ -126,6 +126,7 @@
   --color-border-secondary: lightgray;
   --btn-bg: black;
   --btn-text: white;
+  --btn-shadow: rgba(0, 0, 0, 0.24);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -143,6 +144,7 @@
     --color-border-secondary: oklch(0.38 0.005 100);
     --btn-bg: oklch(0.93 0.01 100.59);
     --btn-text: oklch(0.18 0.015 100.59);
+    --btn-shadow: rgba(255, 255, 255, 0.2);
   }
 }
 
@@ -160,6 +162,7 @@
   --color-border-secondary: oklch(0.38 0.005 100);
   --btn-bg: oklch(0.93 0.01 100.59);
   --btn-text: oklch(0.18 0.015 100.59);
+  --btn-shadow: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -389,7 +392,7 @@ div.vertical-line {
 .btn {
   background-color: var(--btn-bg);
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.24) 3px 3px;
+  box-shadow: var(--btn-shadow) 3px 3px;
   transition: all .2s ease-in-out;
   color: var(--btn-text);
   text-decoration: none;
@@ -416,6 +419,27 @@ div.vertical-line {
   max-width: 30px;
   max-height: 30px;
   border-radius: 5rem;
+}
+
+.link-btn-sm {
+  max-width: 24px;
+  max-height: 24px;
+}
+
+.header-social {
+  display: none;
+  gap: 0.4rem;
+  margin-top: 0.3rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .link-btn img {
+    filter: invert(1);
+  }
+}
+
+[data-theme="dark"] .link-btn img {
+  filter: invert(1);
 }
 
 .connect-cta {
@@ -549,22 +573,11 @@ div.vertical-line {
   }
 
   .footer-floating {
-    position: fixed;
-    bottom: 189px;
-    right: 8;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    gap: 1rem;
+    display: none;
   }
 
-  .footer-floating .email {
-    color: var(--color-text-muted);
-    transform: rotate(90deg);
-    position: absolute;
-    left: 23px;
-    bottom: -22;
-    right: 80;
+  .header-social {
+    display: flex;
   }
 
   .description-box-cont {
