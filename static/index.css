@@ -529,6 +529,10 @@ div.vertical-line {
   z-index: 100;
 }
 
+.theme-toggle img {
+  display: block;
+}
+
 .theme-toggle:hover {
   transform: scale(1.1);
 }

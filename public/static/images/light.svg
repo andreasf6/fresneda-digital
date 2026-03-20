@@ -1,0 +1,19 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10 3V0" stroke="currentColor"/>
+<path d="M10 20V17" stroke="currentColor"/>
+<path d="M17 10H20" stroke="currentColor"/>
+<path d="M-2.98023e-08 10H3" stroke="currentColor"/>
+<path d="M8 6.5V5H12V6.5H13.5V8H15V12H13.5V13.5H12V15H8V13.5H6.5V12H5V8H6.5V6.5H8Z" fill="currentColor" stroke="currentColor"/>
+<rect x="16" y="3" width="1" height="1" fill="currentColor"/>
+<rect x="17" y="2" width="1" height="1" fill="currentColor"/>
+<rect x="15" y="4" width="1" height="1" fill="currentColor"/>
+<rect x="3" y="16" width="1" height="1" fill="currentColor"/>
+<rect x="4" y="15" width="1" height="1" fill="currentColor"/>
+<rect x="2" y="17" width="1" height="1" fill="currentColor"/>
+<rect x="17" y="16" width="1" height="1" transform="rotate(90 17 16)" fill="currentColor"/>
+<rect x="18" y="17" width="1" height="1" transform="rotate(90 18 17)" fill="currentColor"/>
+<rect x="16" y="15" width="1" height="1" transform="rotate(90 16 15)" fill="currentColor"/>
+<rect x="4" y="3" width="1" height="1" transform="rotate(90 4 3)" fill="currentColor"/>
+<rect x="5" y="4" width="1" height="1" transform="rotate(90 5 4)" fill="currentColor"/>
+<rect x="3" y="2" width="1" height="1" transform="rotate(90 3 2)" fill="currentColor"/>
+</svg>
